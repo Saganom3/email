@@ -20,5 +20,5 @@ jobs:
           to: ing.saganome@gmail.com
           from: ing.saganome@gmail.com
           secure: true
-          body: prueba
+          body: Saganome
           attachments: '[{"path":"README.md"}]'
