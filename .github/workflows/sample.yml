@@ -5,19 +5,20 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  build:
+  sending-email:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Send email
-      uses: devellany/send-mail@v1.0.2
-      with:
-          host: smtp.naver.com
-          account: ing.saganome@gmail.com
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3.6.0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ing.saganome@gmail.com
           password: +Saganome3692
-          sender: devellany
-          from: ing.saganome@gmail.com
-          subject: Github Actions job result
-          body: file://README.md
-          attachments: '[{"path":"README.md"}]'
+          subject: Message from github actions.
           to: ing.saganome@gmail.com
+          from: ing.saganome@gmail.com
+          secure: true
+          body: workflow for completed successfully!
