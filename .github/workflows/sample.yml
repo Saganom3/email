@@ -21,4 +21,5 @@ jobs:
           to: ing.saganome@gmail.com
           from: ing.saganome@gmail.com
           secure: true
-          body: workflow for completed successfully!
+          body: file://README.md
+          contentType: text/html
