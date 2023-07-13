@@ -11,7 +11,7 @@ jobs:
       - name: Send email
         uses: dawidd6/action-send-mail@v3.6.0
         with:
-          host: smtp.gmail.com
+          server_address: smtp.gmail.com
           # Optional port (defaults to 465)
           port: 465
           account: ${{secrets.USERNAME}}
