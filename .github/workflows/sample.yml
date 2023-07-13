@@ -16,7 +16,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{secrets.USERNAME}}
-          password: xmfxrdkmjuxswaxl
+          password: ${{secrets.MAIL_PASSWORD}}
           subject: Message from github actions.
           to: ing.saganome@gmail.com
           from: ing.saganome@gmail.com
