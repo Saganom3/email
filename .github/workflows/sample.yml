@@ -13,11 +13,11 @@ jobs:
       uses: devellany/send-mail@v1.0.2
       with:
           host: smtp.naver.com
-          account: ${{secrets.MAIL_ADDRESS}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          account: ing.saganome@gmail.com
+          password: +Saganome3692
           sender: devellany
-          from: ${{secrets.MAIL_ADDRESS}}
+          from: ing.saganome@gmail.com
           subject: Github Actions job result
           body: file://README.md
           attachments: '[{"path":"README.md"}]'
-          to: devellany@gmail.com
+          to: ing.saganome@gmail.com
