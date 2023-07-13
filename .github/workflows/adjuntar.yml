@@ -1,10 +1,6 @@
 
 name: Adjuntar
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: workflow_dispatch
 jobs:
   sending-email:
     runs-on: ubuntu-latest
