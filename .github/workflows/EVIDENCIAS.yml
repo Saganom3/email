@@ -1,9 +1,9 @@
 name: Evidencias
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  #push:
+    #branches: [ master ]
+  #pull_request:
+    #branches: [ master ]
 jobs:
   sending-email:
     runs-on: ubuntu-latest
