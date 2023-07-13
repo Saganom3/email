@@ -8,6 +8,9 @@ jobs:
   sending-email:
     runs-on: ubuntu-latest
     steps:
+    
+      - name: Create text file
+        run: echo "This is a sample text file." > sample.txt
          
       - name: Send email
         uses: dawidd6/action-send-mail@v3.6.0
