@@ -21,3 +21,4 @@ jobs:
           from: ing.saganome@gmail.com
           secure: true
           body: prueba
+          attachments: '[{"path":"README.md"}]'
