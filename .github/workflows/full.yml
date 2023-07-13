@@ -1,4 +1,4 @@
-name: Adjuntar
+name: Full
 on:
   workflow_dispatch
 
