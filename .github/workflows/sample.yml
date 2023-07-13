@@ -11,6 +11,9 @@ jobs:
     
       #- name: Check out repository code
        # uses: actions/checkout@v2
+       
+      - name: List files in directory
+        run: ls -la ./path/to/files
 
       - name: Create attachments
         run: zip -r attachments.zip ./path/to/files
