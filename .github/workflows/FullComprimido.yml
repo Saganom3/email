@@ -35,6 +35,6 @@ jobs:
           to: ing.saganome@gmail.com
           from: ing.saganome@gmail.com
           secure: true
-          body: prueba
+          body: Se envia evidencias correspondiente a la prueba
           contentType: text/html
           attachments: ${{ runner.temp }}/attachment/attachment.zip
