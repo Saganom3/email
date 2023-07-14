@@ -1,0 +1,40 @@
+name: FullComprimido
+on:
+  workflow_dispatch
+
+jobs:
+  sending-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        
+      - name: Create attachment directory
+        run: mkdir -p ${{ runner.temp }}/attachment
+
+      - name: Create attachment file
+        run: echo "This is the content of the attachment file" > ${{ runner.temp }}/attachment/attachment.txt
+
+      - name: Compress attachment
+        run: zip -r ${{ runner.temp }}/attachment/attachment.zip ${{ runner.temp }}/attachment/attachment.txt
+          
+      - name: Upload attachment
+        uses: actions/upload-artifact@v2
+        with:
+          name: attachment
+          path: ${{ runner.temp }}/attachment/attachment.zip
+          
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3.6.0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Message from GitHub Actions
+          to: ing.saganome@gmail.com
+          from: ing.saganome@gmail.com
+          secure: true
+          body: prueba
+          contentType: text/html
+          attachments: ${{ runner.temp }}/attachment/attachment.zip
