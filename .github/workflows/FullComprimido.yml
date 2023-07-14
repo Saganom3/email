@@ -16,7 +16,7 @@ jobs:
         run: echo "This is the content of the attachment file" > ${{ runner.temp }}/attachment/attachment.txt
 
       - name: Compress attachment
-        run: zip ${{ runner.temp }}/attachment/attachment.zip ${{ runner.temp }}/attachment/attachment.txt
+        run: zip -j ${{ runner.temp }}/attachment/attachment.zip ${{ runner.temp }}/attachment/attachment.txt
           
       - name: Upload attachment
         uses: actions/upload-artifact@v2
